@@ -1,7 +1,9 @@
 #import <Foundation/Foundation.h>
+#import <UIKit/UITableView.h>
 #import "OrgFarwayerTiListsearchitemsModule.h"
 #import "TiUIListSectionProxy.h"
 #import "TiUIListViewProxy.h"
+#import "TiUIListView.h"
 
 @implementation OrgFarwayerTiListsearchitemsModule
 
@@ -23,18 +25,30 @@
 
 - (id)sectionSearchCount:(id)args {
     ENSURE_SINGLE_ARG(args, TiUIListSectionProxy);
-    TiUIListSectionProxy *section = args;
+    TiUIListSectionProxy *sectionProxy = args;
 
-    return @([self itemCountInSection:section]);
+    TiUIListView *list = (id) sectionProxy.delegate;
+    UITableView *table = list.tableView;
+    id <UITableViewDataSource> source = (id<UITableViewDataSource>) list;
+    int index = sectionProxy.sectionIndex;
+
+    int count = [source tableView:table numberOfRowsInSection:index];
+
+    return @(count);
 }
 
 - (id)listSearchCount:(id)args {
     ENSURE_SINGLE_ARG(args, TiUIListViewProxy);
-    TiUIListViewProxy *list = args;
+    TiUIListViewProxy *listProxy = args;
+
+    TiUIListView *list = (TiUIListView *) listProxy.view;
+    UITableView *table = list.tableView;
+    id <UITableViewDataSource> source = (id<UITableViewDataSource>) list;
+    int sectionCount = [source numberOfSectionsInTableView:table];
 
     int count = 0;
-    for (TiUIListSectionProxy *section in list.sections) {
-        count += [self itemCountInSection:section];
+    for (int i = 0; i < sectionCount; i++) {
+        count += [source tableView:table numberOfRowsInSection:i];
     }
 
     return @(count);
