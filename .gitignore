@@ -4,5 +4,7 @@ android/lib/
 android/libs/
 android/assets/
 android/example/
+android/dist/
+test/
 .idea
 *.iml
