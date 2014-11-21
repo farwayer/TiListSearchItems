@@ -1,0 +1,28 @@
+<project name="listsearchitems" default="dist">
+	<description>
+		Ant build script for Titanium Android module ListSearchItems
+	</description>
+
+	<property name="ti.module.root" location="${basedir}"/>
+	<property file="build.properties" />
+
+	<mkdir dir="${basedir}/lib"/>
+	<mkdir dir="${basedir}/assets"/>
+	<copy todir="${basedir}/example">
+		<fileset dir="${basedir}/../example"/>
+	</copy>
+
+	<unzip src="${basedir}/dist/org.farwayer.listsearchitems-android-1.0.0.zip"
+		   dest="${basedir}/../test/"/>
+
+	<import file="${titanium.platform}/../module/android/build.xml"/>
+
+	<target name="fullclean" depends="clean">
+		<delete dir="${basedir}/lib"/>
+		<delete dir="${basedir}/libs"/>
+		<delete dir="${basedir}/assets"/>
+		<delete dir="${basedir}/build"/>
+		<delete dir="${basedir}/bin"/>
+		<delete dir="${basedir}/example"/>
+	</target>
+</project>

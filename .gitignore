@@ -1,0 +1,8 @@
+android/build/
+android/bin/
+android/lib/
+android/libs/
+android/assets/
+android/example/
+.idea
+*.iml
