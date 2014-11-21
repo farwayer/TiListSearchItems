@@ -1,17 +1,12 @@
-#
-# this is your module manifest and used by Titanium
-# during compilation, packaging, distribution, etc.
-#
 version: 1.0.0
 apiversion: 2
 description: ListSearchItems
-author: Your Name
-license: Specify your license
-copyright: Copyright (c) 2014 by Your Company
+author: farwayer
+license: WTFPL
+copyright:
 
-# these should not be edited
 name: ListSearchItems
-moduleid: org.farwayer.listsearchitems
+moduleid: org.farwayer.ti.listsearchitems
 guid: 6145be56-afad-4dc9-a118-3b1d4474c996
 platform: android
-minsdk: 3.4.2.v20141117130125
+minsdk: 3.0.0.GA

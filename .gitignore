@@ -1,4 +1,3 @@
-android/build/
 android/bin/
 android/lib/
 android/libs/
@@ -6,5 +5,8 @@ android/assets/
 android/example/
 android/dist/
 test/
+build
 .idea
 *.iml
+*.zip
+*.xcuserdata*

@@ -12,10 +12,11 @@
 		<fileset dir="${basedir}/../example"/>
 	</copy>
 
-	<unzip src="${basedir}/dist/org.farwayer.listsearchitems-android-1.0.0.zip"
-		   dest="${basedir}/../test/"/>
-
 	<import file="${titanium.platform}/../module/android/build.xml"/>
+
+	<target name="testcopy" depends="dist">
+		<unzip src="${basedir}/dist/org.farwayer.ti.listsearchitems-android-1.0.0.zip" dest="${basedir}/../test/"/>
+	</target>
 
 	<target name="fullclean" depends="clean">
 		<delete dir="${basedir}/lib"/>

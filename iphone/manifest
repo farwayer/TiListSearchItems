@@ -1,0 +1,17 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+description: ListSearchItems
+author: Your Name
+license: Specify your license
+copyright: Copyright (c) 2014 by Your Company
+
+# these should not be edited
+name: ListSearchItems
+moduleid: org.farwayer.ti.listsearchitems
+guid: 2f71a7a6-e54e-4141-80b1-f1f63f2fd6be
+platform: iphone
+minsdk: 3.4.0.GA

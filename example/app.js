@@ -1,4 +1,4 @@
-var ListSearchItems = require('org.farwayer.listsearchitems');
+var ListSearchItems = require('org.farwayer.ti.listsearchitems');
 
 var win = Ti.UI.createWindow();
 
