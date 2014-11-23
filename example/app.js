@@ -25,5 +25,7 @@ win.add(listView);
 win.open();
 
 search.addEventListener('change', function () {
-    Ti.API.info(ListSearchItems.listSearchCount(listView));
+    setTimeout(function() {
+	Ti.API.info(ListSearchItems.listSearchCount(listView));
+    }, 100);
 });
